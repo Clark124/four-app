@@ -14,7 +14,7 @@ export default function Products({ data }: { data: Product[] }) {
     }
 
     const handleClick = (id: number) => {
-
+        console.log(id)
     }
     return (
         <div className="flex-1">
