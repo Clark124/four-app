@@ -1,7 +1,7 @@
 import Product from "@/components/Product"
 import Sort from "@/components/Sort"
 
-import { productsAction } from "@/actions/product"
+import { productsAction } from "@/actions/products"
 
 export default async function page() {
   const res = await productsAction()

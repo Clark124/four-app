@@ -1,10 +1,14 @@
+'use client'
+
 import Link from 'next/link'
 import React from 'react'
 import { Separator } from "@/components/ui/separator"
 
 import { Title, MenuList } from '@/lib/constants'
+import { useCartStore } from '@/store'
 
-export default async function Header() {
+export default function Header() {
+    const {cartList} = useCartStore()
     return (
         <div className='h-16 px-10 border-b bg-white'>
             <div className='container flex items-center justify-between h-full'>
@@ -16,7 +20,9 @@ export default async function Header() {
                         {i!==0&& <Separator orientation="vertical" className="mr-3"/>}
                         <Link href={item.href} key={item.text}>{item.text}</Link>
                     </div>)}
+                    {cartList.length?'（'+cartList.length+'）':""} 
                 </div>
+
             </div>
         </div>
     )
